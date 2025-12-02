@@ -1,3 +1,18 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+# Godot
+.import/
+export_presets.cfg
+*.import/
+*.tmp
+*.import/*
+*.import
+/.godot/
+# OS
+.DS_Store
+Thumbs.db
+# VSCode
+.vscode/
+# build / export
+build/

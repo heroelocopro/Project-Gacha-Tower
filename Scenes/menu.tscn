@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bds4bc35mml5g"]
+
+[ext_resource type="Texture2D" uid="uid://bmpsyqvxdwasx" path="res://Assets/Backgrounds/BackgroundPGTMenu.jpg" id="1_1rerr"]
+[ext_resource type="AudioStream" uid="uid://bmcacx4jjivyq" path="res://Assets/Musics/Dream.mp3" id="2_xhh6f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cayip"]
+font_size = 60
+font_color = Color(0, 0, 0, 1)
+
+[node name="Menu" type="Node2D"]
+
+[node name="BackgroundPgtMenu" type="Sprite2D" parent="."]
+scale = Vector2(1.0546875, 1.873047)
+texture = ExtResource("1_1rerr")
+
+[node name="Title" type="Label" parent="BackgroundPgtMenu"]
+offset_left = -339.437
+offset_top = -483.70383
+offset_right = 346.563
+offset_bottom = -385.70383
+text = "Gacha Tower"
+label_settings = SubResource("LabelSettings_cayip")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BackGroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xhh6f")
+autoplay = true
+parameters/looping = true

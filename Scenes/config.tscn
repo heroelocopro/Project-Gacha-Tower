@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://84utadtneyuo"]
+
+[ext_resource type="Texture2D" uid="uid://cbjvjhuk7ai2e" path="res://Assets/Backgrounds/BackgroundPGT.jpg" id="1_kr0as"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kr0as"]
+font_size = 60
+font_color = Color(0, 0, 0, 1)
+
+[node name="Config" type="Node2D"]
+
+[node name="BackgroundPgt" type="Sprite2D" parent="."]
+position = Vector2(-4, 6.5)
+scale = Vector2(1.0488281, 1.8798828)
+texture = ExtResource("1_kr0as")
+
+[node name="Label" type="Label" parent="BackgroundPgt"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -693.155
+offset_top = -995.704
+offset_right = -333.155
+offset_bottom = -897.704
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Config"
+label_settings = SubResource("LabelSettings_kr0as")
+
+[node name="Camera2D" type="Camera2D" parent="."]
