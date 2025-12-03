@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bds4bc35mml5g"]
+[gd_scene load_steps=6 format=3 uid="uid://bds4bc35mml5g"]
 
 [ext_resource type="Texture2D" uid="uid://bmpsyqvxdwasx" path="res://Assets/Backgrounds/BackgroundPGTMenu.jpg" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://coorl6tly73jx" path="res://Scripts/menu.gd" id="1_158mb"]
 [ext_resource type="AudioStream" uid="uid://bmcacx4jjivyq" path="res://Assets/Musics/Dream.mp3" id="2_xhh6f"]
+[ext_resource type="PackedScene" uid="uid://2lq8ijusnwld" path="res://Scenes/Components/component_button.tscn" id="4_158mb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cayip"]
 font_size = 60
 font_color = Color(0, 0, 0, 1)
 
 [node name="Menu" type="Node2D"]
+script = ExtResource("1_158mb")
 
 [node name="BackgroundPgtMenu" type="Sprite2D" parent="."]
 scale = Vector2(1.0546875, 1.873047)
@@ -25,5 +28,44 @@ label_settings = SubResource("LabelSettings_cayip")
 
 [node name="BackGroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_xhh6f")
-autoplay = true
 parameters/looping = true
+
+[node name="ContainerButtons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonPlay" parent="ContainerButtons" instance=ExtResource("4_158mb")]
+layout_mode = 1
+offset_left = -471.0
+offset_top = -407.0
+offset_right = -189.0
+offset_bottom = -139.0
+fontSize = 40
+buttonIcon = null
+buttonText = "Play"
+
+[node name="ButtonConfig" parent="ContainerButtons" instance=ExtResource("4_158mb")]
+layout_mode = 1
+offset_left = -472.0
+offset_top = -91.0
+offset_right = -190.0
+offset_bottom = 177.0
+fontSize = 40
+buttonIcon = null
+buttonText = "Config"
+
+[node name="ButtonExit" parent="ContainerButtons" instance=ExtResource("4_158mb")]
+layout_mode = 1
+offset_left = -475.0
+offset_top = 220.0
+offset_right = -193.0
+offset_bottom = 488.0
+fontSize = 40
+buttonIcon = null
+buttonText = "Exit"
+
+[connection signal="buttonPressed" from="ContainerButtons/ButtonPlay" to="." method="_on_button_play_button_pressed"]
+[connection signal="buttonPressed" from="ContainerButtons/ButtonConfig" to="." method="_on_button_config_button_pressed"]
+[connection signal="buttonPressed" from="ContainerButtons/ButtonExit" to="." method="_on_button_exit_button_pressed"]

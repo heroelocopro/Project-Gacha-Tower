@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://colxcgtwji586"]
+
+[ext_resource type="Texture2D" uid="uid://cu0acy8n4oesm" path="res://Assets/SpriteSheet/cargando2d.png" id="1_42cwh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lat55"]
+atlas = ExtResource("1_42cwh")
+region = Rect2(759, 0, 253, 253)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqv77"]
+atlas = ExtResource("1_42cwh")
+region = Rect2(759, 253, 253, 253)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cj2kh"]
+atlas = ExtResource("1_42cwh")
+region = Rect2(506, 253, 253, 253)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwvoh"]
+atlas = ExtResource("1_42cwh")
+region = Rect2(506, 506, 253, 253)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75hkv"]
+atlas = ExtResource("1_42cwh")
+region = Rect2(759, 506, 253, 253)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gyyq7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lat55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqv77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cj2kh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwvoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75hkv")
+}],
+"loop": true,
+"name": &"loading",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jbln0"]
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[node name="ComponentLoading" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gyyq7")
+animation = &"loading"
+frame_progress = 0.96425986
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = 160.0
+offset_right = 126.0
+offset_bottom = 209.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Cargando"
+label_settings = SubResource("LabelSettings_jbln0")
+horizontal_alignment = 1
+vertical_alignment = 1

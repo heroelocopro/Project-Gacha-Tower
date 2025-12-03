@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnarn66jj5rx4"]
+
+[ext_resource type="Texture2D" uid="uid://cmxhhqij52ce0" path="res://Assets/Sprites/hadasinfondo2d.png" id="1_0sfkk"]
+[ext_resource type="Script" uid="uid://caqw8cwfurujo" path="res://Scripts/npc_hada.gd" id="1_lulny"]
+[ext_resource type="Texture2D" uid="uid://cxsdxvk1l0lmt" path="res://Assets/Sprites/panel-border-007.png" id="2_f5lbs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f5lbs"]
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[node name="NPCHada" type="Node2D"]
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_lulny")
+
+[node name="Hadasinfondo2d" type="Sprite2D" parent="."]
+texture = ExtResource("1_0sfkk")
+
+[node name="ContainerText" type="NinePatchRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 254.5
+offset_top = -255.5
+offset_right = 1119.5
+offset_bottom = 255.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_f5lbs")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Label" type="Label" parent="ContainerText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.5
+offset_top = 75.5
+offset_right = -94.5
+offset_bottom = -72.5
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_f5lbs")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

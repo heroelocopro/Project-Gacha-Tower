@@ -1,9 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://bn3wsxe1rp8ic"]
+[gd_scene load_steps=6 format=3 uid="uid://bn3wsxe1rp8ic"]
 
-[ext_resource type="Texture2D" uid="uid://cbjvjhuk7ai2e" path="res://Assets/Backgrounds/BackgroundPGT.jpg" id="1_nvaej"]
+[ext_resource type="Texture2D" uid="uid://k8wkedc4ysad" path="res://Assets/Backgrounds/BackgrounfPTGBetter.png" id="1_nvaej"]
+[ext_resource type="Script" uid="uid://c88c2xmvygbb5" path="res://Scripts/lobby.gd" id="1_ruji2"]
+[ext_resource type="PackedScene" uid="uid://c26qywy85k1xq" path="res://Scenes/Components/component_user_gold.tscn" id="2_y0s6v"]
+[ext_resource type="PackedScene" uid="uid://2lq8ijusnwld" path="res://Scenes/Components/component_button.tscn" id="3_avk8s"]
+[ext_resource type="Texture2D" uid="uid://1t4kmu3l1xmm" path="res://Assets/Buttons/BotonVacio.png" id="4_ruji2"]
 
 [node name="Lobby" type="Node2D"]
+script = ExtResource("1_ruji2")
 
-[node name="BackgroundPgt" type="Sprite2D" parent="."]
-position = Vector2(579, 291)
+[node name="BackgrounfPtgBetter" type="Sprite2D" parent="."]
+position = Vector2(547, 959)
 texture = ExtResource("1_nvaej")
+
+[node name="ComponentUserGold" parent="." instance=ExtResource("2_y0s6v")]
+position = Vector2(304, 94)
+
+[node name="ButtonBack" parent="." instance=ExtResource("3_avk8s")]
+offset_left = 949.0
+offset_top = 33.0
+offset_right = 1079.0
+offset_bottom = 163.0
+texture = ExtResource("4_ruji2")
+fontSize = 40
+
+[connection signal="buttonPressed" from="ButtonBack" to="." method="_on_button_back_button_pressed"]

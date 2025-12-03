@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://2lq8ijusnwld"]
+
+[ext_resource type="Script" uid="uid://8yaxdupood6d" path="res://Scenes/Components/component_button.gd" id="1_tm6fm"]
+[ext_resource type="Texture2D" uid="uid://botbthh588dpv" path="res://Assets/Buttons/CuadroVacio.png" id="1_vqa5n"]
+[ext_resource type="Texture2D" uid="uid://hnfjyhnptwgd" path="res://Assets/Buttons/return.png" id="3_en88q"]
+[ext_resource type="AudioStream" uid="uid://xbwafqdeo3as" path="res://Assets/Effects/Menu Selection Click.wav" id="3_ha1wd"]
+
+[node name="ComponentButton" type="NinePatchRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -134.0
+offset_right = 141.0
+offset_bottom = 134.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("1_vqa5n")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+script = ExtResource("1_tm6fm")
+fontSize = 120
+buttonIcon = ExtResource("3_en88q")
+buttonSoundClic = ExtResource("3_ha1wd")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 23.0
+offset_right = -23.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0.8117647, 0, 0, 1)
+flat = true
+autowrap_mode = 3
+icon_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Button"]
+bus = &"SFX"

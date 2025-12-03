@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="ProyectoGachaTower"
+run/main_scene="uid://bds4bc35mml5g"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 
 [autoload]
